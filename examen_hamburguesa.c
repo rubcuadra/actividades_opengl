@@ -314,81 +314,13 @@ myReshape(int w, int h)
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
-void printRespuestas()
-{
-    printf("    //1)En los formatos de imágenes binarios ¿cuáles son las 2 secciones de formato internas y qué incluye cada una? (6 pts: 3c/u)\
-           //El Header incluye el formato, las medidas(alto/ancho), tipo de archivo, compresion, etc\
-           //Datos de Imagen: Incluye los colores y los valores de los pixeles\
-        \
-           //2)Indica el aspect ratio de las siguientes resoluciones: , , 720x480 (3 pts: 1c/u)\
-           // 1024x768   4:3\
-           // 1920x1080 16:9\
-           // 720x480  1.5:1\
-           \
-           //3)Escribe como son las matrices de transformación homogénea de la translación y rotación con respecto a Z. (7 pts: 3.5c/u)\
-           //Traslacion z lugares sobre eje z\
-           //1 0 0 0\
-           //0 1 0 0\
-           //0 0 1 z\
-           //0 0 0 1\
-           \
-           //Rotacion z grados sonre eje z\
-           // cos(z) -sin(z) 0 0\
-           // sin(z)  cos(z) 0 0\
-           // 0        0     1 0\
-           // 0        0     0 1\
-           \
-           //4) menciona ¿qué son: COP, DOP y el punto de fuga? (6 pts: 2c/u)\
-           //Punto de fuga es el punto que se usa para montar una perspectiva, se ve en dibujo tecnico, en lugar de hacer lineas horizontales se harian lineas que salen desde ese punto hasta donde acaba la linea, con eso simulamos la perspectiva\
-           //COP Centro de Proyeccion, El origen de la camara\
-           //DOP Direccion de Proyeccion, hacia donde ve\
-           \
-           //5)Explica qué hace la cinemática, la cinemática directa y la cinemática inversa. (9 pts: 3c/u)\
-           //  Cinematica es el calculo de trayectorias sin considerar fuerzas externas mas que las iniciales, de modo que con un punto de inicio y una fuerza inicio podemos generar un punto final;\
-           //Cinematica directa encuentra la configuración final con base en los grados de libertad y si configuracion inicial.\
-           //Cinematica Inversa encuentra la configuración de cada grado de libertad dada la configuración final.\
-           \
-           \
-           //6)De un brazo normal humano, menciona cada uno de los tipos de grados de libertad que se tienen en las articulaciones giratorias tanto en el hombro, en el codo y en la muñeca. (6 pts: 1c/u)\
-           //Torsion\
-           //Rotacion\
-           //Revolucion\
-           \
-           //El hombro posee rotacion y revolucion\
-           //Codo Rotacion\
-           //Muñeca posee Torsion,Rotacion y Revolucion\
-           \
-           //7)Teniendo la cámara en el origen apuntando hacia el eje ­Z y si el plano de proyección está en ­5, ¿dónde se proyectan los puntos? (utilizar las ecuaciones básicas de proyección en perspectiva) para:\
-           //         a) (5, 3, ­10), b) (­2, ­3, ­9). (6 pts: 3c/u)\
-           //      (2.5,1.5,5) y ( 2/(9/5), 3/(9/5), 5  )\
-           \
-           //8)Menciona las diferencias entre las curvas de Bezier y las curvas NURBS (3 pts)\
-           //Bezier nos genera polinomios de grado n-1 donde n es el numero de puntos de control, puntos inicio/fin del polígono de control coincide con los vectores tangentes del los primeos y ultimos respectivamente\
-           //Generan 2 funciones polinomiales, usan coordenadas homogeneas plasmadas en 3D, el grado maximo del polinomio es n donde n es el numero de puntos de control en direccion, lo que mas influye son knots en lugar de puntos de control\
-           \
-           //9)Explica las diferencias entre la representación explícita, implícita o paramétricas de las ecuaciones. (6 pts)\
-           \
-           \
-           //Explicita son las funciones que estan igualadas entre variables, de modo que se genera dependencia, cuando uno le da valor a una variable se genera la siguiente, con esto podemos despejar para obtener funcion en base a una variable\
-           \
-           //Implicita son las funciones igualada a 0  de modo que limita el espacio dividiendo puntos que pertenecen o no a las curvas\
-           \
-           //Parametrica suelen ser varias ecuaciones que definen cada eje, requieren de un parametro en 2D y de 2 para 3D, se suele limitar el parametro (entre 0 y 1 por ej)\
-           \
-           //10) ¿Qué son y menciona las diferencias entre AR, VR, MR y AV? (8 pts)\
-           //AR es Realidad aumentada e implica agregarle cosas digitales a la realidad, agregarle a lo cotidiano elementos digitales , se sobreponen estimulos a la realidad\
-           //VR es realidad virtual es un mundo inmersivo el cual todo es digital, requiere ponerte headsets y te lleva a un lugar diferente de la realidad, suele requerir de todos los sentidos para genera una inmersion total, genera mundos digitales\
-           //MR es realidad mixta y como su nombre lo indica es una fusion de ambas partes, implica combinar mundos reales y mundos virtuales para que coexistan\
-           //AV es Augmented Virtuality es llevar objetos de la vida real a mundos virtualizados");
-}
-int
-main(int argc, char **argv)
+
+int main(int argc, char **argv)
 {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(600, 600);
     glutCreateWindow(argv[0]);
-    printRespuestas();
     myinit();
     glutReshapeFunc(myReshape);
     glutDisplayFunc(display);
